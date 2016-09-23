@@ -1,0 +1,36 @@
+body {
+
+}
+
+ul.errorlist {
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    list-style: none;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+.glyphicon-star {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-star.active {
+    color: #FDB230;
+}
+
+.col-sm-1{
+width:50%;
+}
+
+select.form-control.col-sm-1{width:150px;}
+span.col-sm-1{width:100px;}
+input.form-control.col-sm-1{width:150px;}

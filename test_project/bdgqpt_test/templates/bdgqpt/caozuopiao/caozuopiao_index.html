@@ -1,0 +1,58 @@
+ {% extends 'bdgqpt/base.html' %} 
+ {%block title%}操作票|{{block.super}}{%endblock title%}
+ {% block liangpiao_active %}active{% endblock %}
+ {% block body%}
+ <div class="fluid">
+
+    <div class="row col-sm-12">
+        <button class="btn btn-primary pull-right dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Create<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'bdgqpt:Addcaozuopiao' 'yuling'%}">type1</a></li>
+    </ul>
+</div>
+    </div>
+<!--表格-->
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>拟票人</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for caozuopiao in caozuopiao_list %}
+                                <tr>
+                                    <td><a  href="{% url 'bdgqpt:Updatecaozuopiao' caozuopiao.id %}">{{ caozuopiao.nipiaoren }}</td>
+                                </tr>
+                            {% endfor %}
+                
+                        </tbody>
+            </table>
+             <div class="pagination">
+    <span class="step-links">
+        {% if caozuopiao_list.has_previous %}
+            <a href="?{{page_request_var}}={{ contacts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ caozuopiao_list.number }} of {{ caozuopiao_list.paginator.num_pages }}.
+        </span>
+
+        {% if caozuopiao_list.has_next %}
+            <a href="?{{page_request_var}}={{ caozuopiao_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+        </div>
+     </div>
+   </div>
+ </div>
+
+{% endblock %}
+
+
+
+

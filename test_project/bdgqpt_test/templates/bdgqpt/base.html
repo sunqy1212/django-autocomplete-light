@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}变电运维管理平台{% endblock %}</title>
+<!-- Loads the path to your static files -->
+{%block script%}
+
+{%endblock script%}
+{% load staticfiles %}
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.0.0.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap-tab.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bdgqpt/css/style.css' %}"/>
+    <script type="text/javascript" src="{% static 'bdgqpt/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bdgqpt/js/mymodal.js' %}"></script>
+    <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'django_modalview/js/django_modal_view.js' %}"></script>
+    <script type="text/javascript" src="{% static 'django_modalview/js/jquery.form.js' %}"></script>
+    <!--{{ form.media }}-->
+</head>
+<body>
+{%include "bdgqpt/nav.html"%} 
+{%include "bdgqpt/messages.html"%} 
+{% block body %}
+
+{% endblock %}
+</body>
+        
+</html>
