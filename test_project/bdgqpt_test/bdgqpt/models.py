@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     ID_No = models.CharField(max_length=8)
-    full_name = models.CharField(max_length=10)
+    full_name = models.CharField(max_length=10,primary_key=True)
     phone_number = models.CharField(max_length=11)
     def __str__(self):
         return self.full_name
